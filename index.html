@@ -4,47 +4,12 @@
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-      @media only screen and (max-width: 736px) {
-        .mobile {
-          display: block;
-        }
-        .desktop {
-          display: none;
-        }
-        .tablet {
-          display: none;
-        }
-      }
-
-      @media only screen and (min-width: 736px) and (max-width: 1200px) {
-        .tablet {
-          display: block;
-        }
-        .desktop {
-          display: none;
-        }
-        .mobile {
-          display: none;
-        }
-      }
-
-      @media only screen and (min-width: 1200px) {
-        .desktop {
-          display: block;
-        }
-        .tablet {
-          display: none;
-        }
-        .mobile {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body ng-app="MyApp" ng-cloak>
     <div ng-controller="AppCtrl" class="header" ng-app="MyApp">
       <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="left">
+        
         <md-toolbar layout="row">
           <div class="md-toolbar-tools">
             <h2>
@@ -57,6 +22,9 @@
             </md-button>
           </div>
         </md-toolbar>
+
+
+
         <md-content layout-padding="">
           <md-list>
             <md-subheader class="md-no-sticky">Favorites</md-subheader>
@@ -120,6 +88,8 @@
           </md-button>
         </div>
       </md-toolbar>
+
+
       <md-toolbar class="tablet">
         <div class="md-toolbar-tools">
           <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
@@ -200,16 +170,6 @@
 
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
-    <script>
-      angular.module('MyApp', ['ngMaterial']).controller('AppCtrl', function ($scope, $mdSidenav) {
-        $scope.showMobileMainHeader = true;
-        $scope.openSideNavPanel = function () {
-          $mdSidenav('left').open();
-        };
-        $scope.closeSideNavPanel = function () {
-          $mdSidenav('left').close();
-        };
-      });
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
